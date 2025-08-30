@@ -19,16 +19,24 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.white70,
+          centerTitle: true,
+          elevation: 0.0,
+          titleTextStyle: Theme.of(
+            context,
+          ).textTheme.headlineLarge!.copyWith(fontWeight: FontWeight.bold),
+        ),
         sliderTheme: SliderThemeData(
           trackHeight: 10,
           thumbShape: const RoundSliderThumbShape(
             enabledThumbRadius: 12.0,
             disabledThumbRadius: 10.0,
             elevation: 5.0,
-          ), // Thumb size
-          overlayShape: const RoundSliderOverlayShape(
-            overlayRadius: 20.0,
-          ), // Overlay size
+          ),
+          // Thumb size
+          overlayShape: const RoundSliderOverlayShape(overlayRadius: 20.0),
+          // Overlay size
           thumbColor: Colors.deepPurple.shade300,
           activeTrackColor: Colors.deepPurple.shade600,
           padding: EdgeInsets.zero,

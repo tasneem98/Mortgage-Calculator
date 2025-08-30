@@ -30,28 +30,20 @@ class _MortgagePageState extends State<MortgagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Mortgage Calculator', textAlign: TextAlign.center),
+      ),
+      resizeToAvoidBottomInset: true,
+      extendBodyBehindAppBar: true,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 10.0,
               children: [
-                Center(
-                  child: Text(
-                    'Mortgage Calculator',
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
                 25.height,
-                // const SizedBox(height: 25.0),
-
-                // Purchase Price
                 TextWidget(
                   title: 'Purchase Price: ',
                   value: _purchasePrice.toInt(),
@@ -111,35 +103,35 @@ class _MortgagePageState extends State<MortgagePage> {
                     ],
                   ),
                 ),
-
-                25.height,
-
-                Center(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        // Show results
-                        _isVisible = true;
-
-                        // Calculate loan amount
-                        _loanAmount = mortgageData.loanAmount(
-                          purchasePrice: _purchasePrice.toInt(),
-                          downPayment: _downPayment.toInt(),
-                        );
-
-                        // Calculate mortgage result
-                        _mortgageResult = mortgageData.mortgagePayment(
-                          loanAmount: _loanAmount,
-                          time: _time.toInt(),
-                          rate: _rate.toInt(),
-                        );
-                      });
-                    },
-                    child: const Text('Get a mortgage quote'),
-                  ),
-                ),
               ],
             ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: SizedBox(
+        height: 200,
+        child: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              setState(() {
+                // Show results
+                _isVisible = true;
+
+                // Calculate loan amount
+                _loanAmount = mortgageData.loanAmount(
+                  purchasePrice: _purchasePrice.toInt(),
+                  downPayment: _downPayment.toInt(),
+                );
+
+                // Calculate mortgage result
+                _mortgageResult = mortgageData.mortgagePayment(
+                  loanAmount: _loanAmount,
+                  time: _time.toInt(),
+                  rate: _rate.toInt(),
+                );
+              });
+            },
+            child: const Text('Get a mortgage quote'),
           ),
         ),
       ),

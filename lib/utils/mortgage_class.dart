@@ -5,11 +5,9 @@ import '/utils/data.dart';
 class MortgageClass {
   final _mortgageData = MortgageData.fromJson({
     "Purchase Price": {"minimum": 100000.0, "maximum": 2000000.0},
-
-    "Down Payment": {"minimum": 10000.0, "maximum": 1000000.0},
-
+    "Down Payment": {"minimum": 10000.0, "maximum": 500000.0},
     "Repayment Time": {"minimum": 5.0, "maximum": 40.0},
-    "Interest Rate": {"minimum": 0.0, "maximum": 20.0},
+    "Interest Rate": {"minimum": 1.0, "maximum": 20.0},
   });
 
   // Getters of the minimum values of the mortgage data
