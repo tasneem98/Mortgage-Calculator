@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '/mortgage/mortgage_class.dart';
-import '/text_widget.dart';
-import 'main.dart' show intl;
+import '/utils/mortgage_class.dart';
+import '../main.dart' show intl;
+import '../widgets/text_widget.dart';
 
 class MortgagePage extends StatefulWidget {
   const MortgagePage({super.key});

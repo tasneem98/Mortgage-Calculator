@@ -1,6 +1,6 @@
 import 'dart:math' show pow;
 
-import '/mortgage/data.dart';
+import '/utils/data.dart';
 
 class MortgageClass {
   final _mortgageData = MortgageData.fromJson({
