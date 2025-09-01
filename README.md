@@ -29,10 +29,6 @@ Users can input the purchase price of a property, their down payment amount, the
 ---
 
 ## 📸 Screenshots & Demo
-*(Replace placeholders with your own screenshots and demo link)*
-
-**Example Screens:**  
-
 <img src="assets/screenshot_input.png" alt="Screenshot-input" width="200"/>
 <img src="assets/screenshot_results.png" alt="screenshot-result" width="200"/>
 
